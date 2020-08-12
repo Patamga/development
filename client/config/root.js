@@ -21,7 +21,9 @@ const RootComponent = (props) => {
         <Startup>
           <Switch>
             <Route exact path="/" component={() => <DummyView />} />
+            <Route exact path="/microtasks/*" component={() => <DummyView />} />
             <Route exact path="/lessons/d3/*" component={() => <D3Lessons />} />
+
             <Route component={() => <NotFound />} />
           </Switch>
         </Startup>
