@@ -7,7 +7,7 @@ import LineCircle from './line-circle'
 import Interpolation from './interpolation'
 import Axises from './axises'
 import EnterExitUpdate from './enter-update-exit'
-import TwoAxises from './TwoAxises'
+// import TwoAxises from './TwoAxises'
 
 import Head from '../head'
 
@@ -22,7 +22,7 @@ const Svg = () => {
         <Route exact path="/lessons/d3/line-circle" component={() => <LineCircle />} />
         <Route exact path="/lessons/d3/interpolation" component={() => <Interpolation />} />
         <Route exact path="/lessons/d3/axises" component={() => <Axises />} />
-        <Route exact path="/lessons/d3/two-axises" component={() => <TwoAxises />} />
+        {/* <Route exact path="/lessons/d3/two-axises" component={() => <TwoAxises />} /> */}
       </Switch>
     </div>
   )
