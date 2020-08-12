@@ -2,7 +2,21 @@
 @tailwind  base;
 @tailwind  components;
 @import "./microtask1.scss";
+@import "./microtask2.scss";
 
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+h1 {
+  font-weight: bolder;
+}
+.link {
+  color: #2763bd;
+}
+.link:hover {
+  color: #6b46c1;
+}
+a:hover {
+  color: #6b46c1;
+}
