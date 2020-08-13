@@ -13,18 +13,21 @@ import TaskMenu from './Microtasks/Tasks/taskMenu'
 import WithOutClassnameModul from './Microtasks/miccrotask2/withOutClassnameModul'
 import WithClassnameModul from './Microtasks/miccrotask2/withClassnameModul'
 import MenuComponent from './Microtasks/miccrotask2/menu'
-
-
-
+import Microtask3 from './Microtasks/microtask3/microtack3'
+import Description from './Microtasks/microtask3/desc'
+import Microtask4t1 from './Microtasks/microtask4/task-1'
+import Microtask4t2 from './Microtasks/microtask4/task-2'
+import Menu3 from './Microtasks/microtask3/menu3'
+import Menu4 from './Microtasks/microtask4/menu4'
 
 const Dummy = () => {
   const params = useParams()
   return (
-    <div className="w-screen h-screen flex-col bg-gray-100">
+    <div className="w-full h-full flex flex-col bg-gray-100">
       <div className="flex items-center justify-center h-12 w-full bg-teal-700 text-white font-thin   ">
         MICROTASKS
       </div>
-      <div className="flex flex-col w-full md:flex-row">
+      <div className="flex flex-col w-full h-full md:flex-row">
         <div className="flex flex-col w-screen h-auto  bg-white md:h-screen md:w-64 p-5 ">
           <div className="flex flex-col text-sm">
             <h1>mikrotask 1</h1>
@@ -32,10 +35,12 @@ const Dummy = () => {
             <h1>microtask 2</h1>
             <MenuComponent params={params} />
             <h1>microtask 3</h1>
-
+            <Menu3 />
+            <h1>microtask 4</h1>
+            <Menu4 />
           </div>
         </div>
-        <div className="w-screen h-screen  bg-gray-300">
+        <div className=" w-full  h-screen bg-gray-300">
           <Switch>
             <Route exact path="/microtasks/task1" component={() => <Task1 />} />
             <Route exact path="/microtasks/task2" component={() => <Task2 />} />
@@ -52,6 +57,10 @@ const Dummy = () => {
               component={() => <WithOutClassnameModul />}
             />
             <Route exact path="/microtasks/microtask2_2" component={() => <WithClassnameModul />} />
+            <Route exact path="/microtasks/microtask3" component={() => <Microtask3 />} />
+            <Route exact path="/microtasks/desc" component={() => <Description />} />
+            <Route exact path="/microtasks/microtask4-1" component={() => <Microtask4t1 />} />
+            <Route exact path="/microtasks/microtask4-2" component={() => <Microtask4t2 />} />
           </Switch>
         </div>
       </div>

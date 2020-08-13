@@ -28,8 +28,8 @@ const Dummy = (props) => {
           (code snippet)
         </a>
       </div>
-
-      {(props.params[0] === 'microtask2_1' || 'microtask2_2') && textMicrotask2}
+      {props.params[0] === 'microtask2_1' && textMicrotask2}
+      {props.params[0] === 'microtask2_2' && textMicrotask2}
     </div>
   )
 }

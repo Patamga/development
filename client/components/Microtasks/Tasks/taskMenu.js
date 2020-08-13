@@ -18,7 +18,7 @@ const Dummy = (props) => {
   Object.entries(tasks).map(([task, value], index) => {
     console.log(task, value)
     return (
-      <div key={index}>
+      <div key={index} className="break-all">
         <ul>
           <li>
             <Link className="link pr-5" to={`/microtasks/${task}`}>

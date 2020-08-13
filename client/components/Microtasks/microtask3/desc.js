@@ -3,12 +3,16 @@ import React from 'react'
 
 const Dummy = () => {
   const text3 = `Реальное тестовое.
+
     Дан такой код. https://example.com/api/users принимает параметр page http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=0, http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=1
     Лимит всегда должен быть равен 10
+
     1. Задание
     Получить данные с помощью fetch (для этого надо создать стейт с числовым параметром page и добавить его в запрос )
     fetch(url).then(r => r.json()).then(body => {})
+
     2. Вывести данные текущей страницы в таблицу. Структура тегов table>tbody>tr(строка таблицы)>td(ячейка таблицы)
+
     3. Сделать возможность перемещения по страницам с помощью кнопок
     На первую страницу
     На страницу назад
@@ -29,8 +33,8 @@ const Dummy = () => {
     Math.ceil(7.5) === 8`
 
   return (
-    <div>
-
+    <div className="p-2">
+      {text3}
     </div>
   )
 }
