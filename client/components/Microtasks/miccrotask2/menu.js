@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Dummy = (props) => {
-  const textMicrotask2 = 'из реакта надо использовать useState. Сделать две колонки по центру страницы - в каждой колонке есть заголовок - высотой 16rem. Users Companies Задача , сделать так, чтобы для экрана xl показывались оба столбца, для экрана меньше только один. Но по клику на заголовке, экран переключился в противоположный Users - Companies Companies - Users'
+  const textMicrotask2 =
+    'из реакта надо использовать useState. Сделать две колонки по центру страницы - в каждой колонке есть заголовок - высотой 16rem. Users Companies Задача , сделать так, чтобы для экрана xl показывались оба столбца, для экрана меньше только один. Но по клику на заголовке, экран переключился в противоположный Users - Companies Companies - Users'
 
   return (
     <div className="flex flex-col text-sm">
