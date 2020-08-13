@@ -40,7 +40,7 @@ const Dummy = () => {
             <Menu4 />
           </div>
         </div>
-        <div className=" w-full  h-screen bg-gray-300">
+        <div className=" w-full  h-full bg-gray-300">
           <Switch>
             <Route exact path="/microtasks/task1" component={() => <Task1 />} />
             <Route exact path="/microtasks/task2" component={() => <Task2 />} />
