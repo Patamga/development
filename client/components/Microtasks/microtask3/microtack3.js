@@ -14,11 +14,9 @@ export default function Table () {
   const firstDisable = pageNumber === 1
 
   useEffect(() => {
-    setLoading(true)
     fetch(`${USERS_URL}&page=${pageNumber}`)
       .then((res) => res.json())
       .then((data) => {
-        setLoading(false)
         setUsersData(data)
 
       })
