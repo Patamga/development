@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
-const USERS_URL = 'http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10';
+const USERS_URL = 'https://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10';
 const NUMBER_OF_USERS = 75
 export default function Table () {
   const [pageNumber, setPageNumber] = useState(1)
   const [usersData, setUsersData] = useState()
-  const [loading, setLoading] = useState(true)
-  console.log(loading)
   const previous = (pageNumber - 1) !== 0 ? pageNumber - 1 : 1
   const next = pageNumber + 1
   const last = Math.ceil(NUMBER_OF_USERS / 10)
-
   const previousDisable = pageNumber <= 1
   const nextDisable = pageNumber >= last
   const lastDisable = pageNumber === last
