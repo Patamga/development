@@ -7,7 +7,7 @@ const Dummy = withScriptjs(
 
     return (
       <GoogleMap
-        defaultZoom={5}
+        defaultZoom={4}
         defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}
       >
         <MarkerClusterer
