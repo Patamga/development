@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, useParams } from 'react-router-dom'
+import { Switch, Route, useParams, Link } from 'react-router-dom'
 import Task1 from './Microtasks/Tasks/task1'
 import Task2 from './Microtasks/Tasks/task2'
 import Task3 from './Microtasks/Tasks/task3'
@@ -19,6 +19,7 @@ import Microtask4t1 from './Microtasks/microtask4/task-1'
 import Microtask4t2 from './Microtasks/microtask4/task-2'
 import Menu3 from './Microtasks/microtask3/menu3'
 import Menu4 from './Microtasks/microtask4/menu4'
+import Brewery from './BreweryClassComponents/beer'
 
 const Dummy = () => {
   const params = useParams()
@@ -29,15 +30,17 @@ const Dummy = () => {
       </div>
       <div className="flex flex-col w-full h-full md:flex-row">
         <div className="flex flex-col w-screen h-auto  bg-white md:h-screen md:w-64 p-5 ">
-          <div className="flex flex-col text-sm">
-            <h1>mikrotask 1</h1>
+          <div className="flex flex-col text-sm bz">
+            <h1>MICROTASK 1</h1>
             <TaskMenu params={params} />
-            <h1>microtask 2</h1>
+            <h1>MICROTASK 2</h1>
             <MenuComponent params={params} />
-            <h1>microtask 3</h1>
+            <h1>MICROTASK 3</h1>
             <Menu3 />
-            <h1>microtask 4</h1>
+            <h1>MICROTASK 4</h1>
             <Menu4 />
+            <h1>BREWERY - CLASS COMPONENT</h1>
+            <Link className="link" to="/brewery/">tasc</Link>
           </div>
         </div>
         <div className=" w-full  h-full bg-gray-300">
@@ -61,6 +64,7 @@ const Dummy = () => {
             <Route exact path="/microtasks/desc" component={() => <Description />} />
             <Route exact path="/microtasks/microtask4-1" component={() => <Microtask4t1 />} />
             <Route exact path="/microtasks/microtask4-2" component={() => <Microtask4t2 />} />
+            <Route exact path="/brewery/" component={() => <Brewery />} />
           </Switch>
         </div>
       </div>

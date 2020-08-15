@@ -5,7 +5,7 @@ import bodyParser from 'body-parser'
 import sockjs from 'sockjs'
 import { renderToStaticNodeStream } from 'react-dom/server'
 import React from 'react'
-
+import axios from 'axios'
 import cookieParser from 'cookie-parser'
 import config from './config'
 import Html from '../client/html'
@@ -40,6 +40,30 @@ const middleware = [
 ]
 
 middleware.forEach((it) => server.use(it))
+// Brewery component start
+const BASE_URL = 'https://sandbox-api.brewerydb.com/v2'
+const API_KEY = '8c1e5ad799a748bcf869d46c80f4aaa4'
+
+const getBeerUrl = () => `${BASE_URL}/beer/random?key=${API_KEY}`
+const getBreweryUrl = (id) => `${BASE_URL}/beer/${id}/breweries?key=${API_KEY}`
+const getBreweryData = (id) => `${BASE_URL}/brewery/${id}/locations?key=${API_KEY}`
+
+server.get('/api/v1/beer', (req, res) => {
+  axios(getBeerUrl()).then(({ data }) => {
+    res.json(data)
+  })
+})
+server.get('/api/v1/breweries/:id', (req, res) => {
+  axios(getBreweryUrl(req.params.id)).then(({ data }) => {
+    res.json(data)
+  })
+})
+server.get('/api/v1/breweries/locations/:id', (req, res) => {
+  axios(getBreweryData(req.params.id)).then(({ data }) => {
+    res.json(data)
+  })
+})
+// Brewery component end
 
 server.use('/api/', (req, res) => {
   res.status(404)
