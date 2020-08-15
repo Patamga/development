@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Pap from './pab'
-import Map from './map'
+import Pup from './pub'
 
 const GET_URL = (id) => `/api/v1/breweries/${id}`
 
@@ -10,10 +9,9 @@ class Root extends React.Component {
     super(props)
     this.state = {
       breweries: [],
-      breweryesId:  '',
+      breweryesId: '',
       isLoading: false
     }
-    // this.getBeer = this.getBeer.bind(this)
   }
 
   getBeer = () => {
@@ -45,14 +43,7 @@ class Root extends React.Component {
       <div>
         <span className="text-yellow-800 font-bold">Is this beer brewed - </span>
         {this.state.breweries.map((it) => it.name).join(', ')} <br />
-        <Pap id={this.state.breweryesId} />
-        <Map
-          isMarkerShown={false}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA90smuqqZD25kO8CnJ2yaWSDFXISJtUu4&callback=initMap&libraries=&v=weekly"
-          loadingElement={<div style={{ height: `100%` }} />}
-        />
+        <Pup id={this.state.breweryesId} />
       </div>
     )
   }

@@ -1,14 +1,29 @@
 import React from 'react'
 import { withScriptjs, GoogleMap, Marker, withGoogleMap } from 'react-google-maps'
+import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 
-const Dummy = withScriptjs(withGoogleMap((props) => {
-  return (
-    <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
-    </GoogleMap>
-  )
-})
+const Dummy = withScriptjs(
+  withGoogleMap((props) => {
 
+    return (
+      <GoogleMap
+        defaultZoom={5}
+        defaultCenter={{ lat: props.markers[0].latitude, lng: props.markers[0].longitude }}
+      >
+        <MarkerClusterer
+          onClick={props.onMarkerClustererClick}
+          averageCenter
+          enableRetinaIcons
+          gridSize={60}
+        >
+          {props.isMarkerShown &&
+            props.markers.map((marker) => (
+              <Marker key={marker.id} position={{ lat: marker.latitude, lng: marker.longitude }} />
+            ))}
+        </MarkerClusterer>
+      </GoogleMap>
+    )
+  })
 )
 
 Dummy.propTypes = {}

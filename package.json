@@ -98,6 +98,7 @@
     "express": "^4.17.1",
     "git-revision-webpack-plugin": "^3.0.6",
     "google-map-react": "^2.0.8",
+    "google-maps-react": "^2.0.6",
     "history": "^4.10.1",
     "image-webpack-loader": "^6.0.0",
     "next": "^9.4.4",

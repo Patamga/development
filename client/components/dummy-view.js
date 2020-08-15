@@ -19,7 +19,7 @@ import Microtask4t1 from './Microtasks/microtask4/task-1'
 import Microtask4t2 from './Microtasks/microtask4/task-2'
 import Menu3 from './Microtasks/microtask3/menu3'
 import Menu4 from './Microtasks/microtask4/menu4'
-import Brewery from './BreweryClassComponents/beer'
+import Brewery from './BreweryClassComponents/index'
 
 const Dummy = () => {
   const params = useParams()
