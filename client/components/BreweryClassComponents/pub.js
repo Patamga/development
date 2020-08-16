@@ -60,10 +60,13 @@ class Root extends React.Component {
                   <span className="text-yellow-800">Street Address - </span>
                   {it.streetAddress}
                 </li>
-                <li>
-                  <span className="text-yellow-800">website - </span>
-                  {it.website}
-                </li>
+                {it.website &&
+                  <li>
+                    <span className="text-yellow-800">website - </span>
+                    {it.website}
+                  </li>
+                }
+
                 <li>
                   <span className="text-yellow-800"> ~ </span>
                 </li>
