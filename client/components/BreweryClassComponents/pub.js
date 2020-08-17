@@ -3,18 +3,13 @@ import axios from 'axios'
 import Map from './map'
 
 const GET_URL = (id) => `/api/v1/breweries/locations/${id}`
-// dotenv is not working
-// const KEY = process.env.REACT_APP_GOOGLE_API_KEY
 
-const KEY = 'AIzaSyB0dJjvxwenhb4ZPq1IdKpFkNpy8BEU5HY'
-
-console.log('dotenv', KEY)
 class Root extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       locations: [],
-      isLoading: false
+      isLoading: false,
     }
   }
 
@@ -38,7 +33,8 @@ class Root extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+
+    console.log('env ', ENABLE_SOCKETS, GOOGLE_API_KEY)
     if (this.state.isLoading) return 'Updating...'
     if (this.props.id === '') return 'No brewery'
     return (
@@ -60,12 +56,12 @@ class Root extends React.Component {
                   <span className="text-yellow-800">Street Address - </span>
                   {it.streetAddress}
                 </li>
-                {it.website &&
+                {it.website && (
                   <li>
                     <span className="text-yellow-800">website - </span>
                     {it.website}
                   </li>
-                }
+                )}
 
                 <li>
                   <span className="text-yellow-800"> ~ </span>
@@ -80,7 +76,7 @@ class Root extends React.Component {
           markers={this.state.locations}
           containerElement={<div className="mapcontainer" />}
           mapElement={<div className="mapelement" style={{ height: `100%` }} />}
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${KEY}&v=3.exp&libraries=geometry,drawing,places`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div className="mapelement" />}
         />
       </div>

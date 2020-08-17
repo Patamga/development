@@ -25,6 +25,7 @@
     "es6": true
   },
   "globals": {
+    "GOOGLE_API_KEY": true,
     "IS_PROD": true,
     "STRIPE_PUBLIC_KEY": true,
     "SENTRY_CLIENT_URL": true,

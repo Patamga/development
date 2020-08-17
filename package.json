@@ -96,6 +96,7 @@
     "d3-scale": "^3.2.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
     "git-revision-webpack-plugin": "^3.0.6",
     "google-map-react": "^2.0.8",
     "google-maps-react": "^2.0.6",

@@ -30,7 +30,8 @@ if (typeof ENABLE_SOCKETS !== 'undefined' && ENABLE_SOCKETS) {
     socket.onopen = () => {
       store.dispatch(socketActions.connected)
     }
-
+    // console.log(GOOGLE_API_KEY)
+    console.log(ENABLE_SOCKETS)
     socket.onmessage = (message) => {
       // eslint-disable-next-line no-console
       console.log(message)

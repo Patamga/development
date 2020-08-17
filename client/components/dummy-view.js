@@ -20,9 +20,12 @@ import Microtask4t2 from './Microtasks/microtask4/task-2'
 import Menu3 from './Microtasks/microtask3/menu3'
 import Menu4 from './Microtasks/microtask4/menu4'
 import Brewery from './BreweryClassComponents/index'
+// import config from '../../server/config'
 
 const Dummy = () => {
   const params = useParams()
+  // const apiKey = config.apiKeyGoogle
+  // console.log('keys', apiKey)
   return (
     <div className="w-full h-full flex flex-col bg-gray-100">
       <div className="flex items-center justify-center h-12 w-full bg-teal-700 text-white font-thin   ">
@@ -40,7 +43,7 @@ const Dummy = () => {
             <h1>MICROTASK 4</h1>
             <Menu4 />
             <h1>BREWERY - CLASS COMPONENT</h1>
-            <Link className="link" to="/brewery/">tasc</Link>
+            <Link className="link" to="/brewery/">task</Link>
           </div>
         </div>
         <div className=" w-full  h-full bg-gray-300">

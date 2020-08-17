@@ -42,7 +42,13 @@ const middleware = [
 middleware.forEach((it) => server.use(it))
 // Brewery component start
 const BASE_URL = 'https://sandbox-api.brewerydb.com/v2'
-const API_KEY = '8c1e5ad799a748bcf869d46c80f4aaa4'
+
+const API_KEY = config.breweryApiKey
+const API_GOOGLE_KEY = config.googleApiKey
+const GOOGLE_MAP_URL = `https://maps.googleapis.com/maps/api/js?key=${API_GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`
+console.log('server url', GOOGLE_MAP_URL)
+// const API_KEY = '8c1e5ad799a748bcf869d46c80f4aaa4'
+// const GOOGL_API_KEY = ''
 
 const getBeerUrl = () => `${BASE_URL}/beer/random?key=${API_KEY}`
 const getBreweryUrl = (id) => `${BASE_URL}/beer/${id}/breweries?key=${API_KEY}`
@@ -53,16 +59,25 @@ server.get('/api/v1/beer', (req, res) => {
     res.json(data)
   })
 })
+
+server.get('/api/v1/breweries/google_map', (req, res) => {
+  const url = { googlUrl: GOOGLE_MAP_URL }
+  res.json(url)
+})
+
 server.get('/api/v1/breweries/:id', (req, res) => {
+
   axios(getBreweryUrl(req.params.id)).then(({ data }) => {
     res.json(data)
   })
 })
 server.get('/api/v1/breweries/locations/:id', (req, res) => {
+  const url =  GOOGLE_MAP_URL 
   axios(getBreweryData(req.params.id)).then(({ data }) => {
-    res.json(data)
+    res.json({...data, url})
   })
 })
+
 // Brewery component end
 
 server.use('/api/', (req, res) => {
