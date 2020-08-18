@@ -1,8 +1,9 @@
+
 .clockContainer {
   display: flex;
+  background: #000;
   width: 450px;
   height: 150px;
-  background: #000;
 }
 .button-clock {
   color: #EDF2F7;
@@ -14,4 +15,7 @@
   border-style: solid;
   border-radius: 100%;
   font-weight: bolder;
+}
+.wrap {
+  word-wrap: normal;
 }
