@@ -34,7 +34,6 @@ class Root extends React.Component {
 
   render() {
 
-    console.log('env ', ENABLE_SOCKETS, GOOGLE_API_KEY)
     if (this.state.isLoading) return 'Updating...'
     if (this.props.id === '') return 'No brewery'
     return (

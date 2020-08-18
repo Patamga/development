@@ -19,7 +19,11 @@ import Microtask4t1 from './Microtasks/microtask4/task-1'
 import Microtask4t2 from './Microtasks/microtask4/task-2'
 import Menu3 from './Microtasks/microtask3/menu3'
 import Menu4 from './Microtasks/microtask4/menu4'
+import Menu5 from './Microtasks/microtask5/menu5'
+import Desc5 from './Microtasks/microtask5/desc5'
 import Brewery from './BreweryClassComponents/index'
+import Microtask5 from './Microtasks/microtask5/taskclock'
+
 // import config from '../../server/config'
 
 const Dummy = () => {
@@ -42,8 +46,12 @@ const Dummy = () => {
             <Menu3 />
             <h1>MICROTASK 4</h1>
             <Menu4 />
+            <h1>MICROTASK 5</h1>
+            <Menu5 />
             <h1>BREWERY - CLASS COMPONENT</h1>
-            <Link className="link" to="/brewery/">task</Link>
+            <Link className="link" to="/brewery/">
+              task
+            </Link>
           </div>
         </div>
         <div className=" w-full  h-full bg-gray-300">
@@ -64,9 +72,11 @@ const Dummy = () => {
             />
             <Route exact path="/microtasks/microtask2_2" component={() => <WithClassnameModul />} />
             <Route exact path="/microtasks/microtask3" component={() => <Microtask3 />} />
-            <Route exact path="/microtasks/desc" component={() => <Description />} />
+            <Route exact path="/microtasks/microtask3/desc" component={() => <Description />} />
             <Route exact path="/microtasks/microtask4-1" component={() => <Microtask4t1 />} />
             <Route exact path="/microtasks/microtask4-2" component={() => <Microtask4t2 />} />
+            <Route exact path="/microtasks/microtask5" component={() => <Microtask5 />} />
+            <Route exact path="/microtasks/microtask5/desc5" component={() => <Desc5 />} />
             <Route exact path="/brewery/" component={() => <Brewery />} />
           </Switch>
         </div>

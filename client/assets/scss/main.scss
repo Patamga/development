@@ -4,11 +4,16 @@
 @import "./microtask1.scss";
 @import "./microtask3.scss";
 @import "./brewery.scss";
+@import "./clock.scss";
 
 
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+.relative {
+  position: relative!important;
+}
 
 h1 {
   font-weight: bolder;

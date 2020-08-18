@@ -8,6 +8,7 @@ import store, { history } from '../redux'
 import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
 
+
 import D3Lessons from '../components/d3'
 import Startup from './startup'
 
@@ -22,6 +23,7 @@ const RootComponent = (props) => {
           <Switch>
             <Route exact path="/" component={() => <DummyView />} />
             <Route exact path="/microtasks/*" component={() => <DummyView />} />
+
             <Route exact path="/brewery/*" component={() => <DummyView />} />
             <Route exact path="/lessons/d3/*" component={() => <D3Lessons />} />
 
