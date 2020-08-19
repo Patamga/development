@@ -13,7 +13,6 @@ class Root extends React.Component {
       description: '',
       id: ''
     }
-    // this.getBeer = this.getBeer.bind(this)
   }
 
   getBeer = () => {
@@ -32,7 +31,7 @@ class Root extends React.Component {
 
   render() {
     return (
-      <div className="m-2 bg-white p-5 border border border-solid border-gray-400 ">
+      <div className="m-2 bg-white p-5 border border-solid border-gray-400 ">
         <div>
           <h1>
             <span className="text-yellow-800">Random active {this.state.type} - </span>
