@@ -147,3 +147,36 @@ docker-compose -f .\docker\PROD.docker-compose.yml down (To stop contaiters)
 docker-compose -f .\docker\DEV.docker-compose.yml up (Options: --build for build, -d to detach )
 docker-compose -f .\docker\DEV.docker-compose.yml down (To stop contaiters)
 ```
+webpak change //
+```
+{
+  test: /\.woff(2)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: 'fonts/'
+      }
+    }
+  ]
+}
+```
+```
+{ test: /.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+```
+
+in .eslintrc added
+```
+ "globals": {
+    "GOOGLE_API_KEY": true,
+    "IS_PROD": true,
+    "STRIPE_PUBLIC_KEY": true,
+    "SENTRY_CLIENT_URL": true,
+    "deferredPrompt": true,
+    "axios": true,
+    "globalThis": true,
+    "ENABLE_SOCKETS": true
+  }
+  
+```
