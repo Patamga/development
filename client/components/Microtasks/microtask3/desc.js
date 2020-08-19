@@ -1,40 +1,75 @@
 import React from 'react'
-
+import ReactMarkdown from 'react-markdown'
 
 const Dummy = () => {
-  const text3 = `Реальное тестовое.
 
-    Дан такой код. https://example.com/api/users принимает параметр page http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=0, http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=1
-    Лимит всегда должен быть равен 10
+  const text3 = `
+  # Дан такой код.
 
-    1. Задание
-    Получить данные с помощью fetch (для этого надо создать стейт с числовым параметром page и добавить его в запрос )
-    fetch(url).then(r => r.json()).then(body => {})
+  \`
+  import React from 'react'
 
-    2. Вывести данные текущей страницы в таблицу. Структура тегов table>tbody>tr(строка таблицы)>td(ячейка таблицы)
+const /USERS_URL = 'http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10';
+const /NUMBER_OF_USERS = 75
+export default function Table () {
+    return (
+        <div>
+            <table className="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+                <tbody></tbody>
+            </table>
+        <section className="pagination">
+            <button className="first-page-btn">first</button>
+            <button className="previous-page-btn">previous</button>
+            <button className="next-page-btn">next</button>
+            <button className="last-page-btn">last</button>
+        </section>
+    </div>
+    );
+};
+\`
+https://example.com/api/users принимает параметр page
+http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=0
+http://5f32c583ec83300016137a8e.mockapi.io/api/v1/users?limit=10&page=1
 
-    3. Сделать возможность перемещения по страницам с помощью кнопок
-    На первую страницу
-    На страницу назад
-    На страницу вперед
-    На последнюю страницу
-    Для переходово надо менять параметр стейта  page
-    4. Кнопки должны иметь аттрибут disabled
-    - если это первые две кнопки и страница 0
-    - если это последние две кнопки и страница последняя
+## Лимит всегда должен быть равен 10
 
-    Для работы вам надо будет использовать математические функции
-    Math.max - вычислить максимальоне число из двух
-    Math.ceil - округление наверх не целого числа
+*1. Задание
+Получить данные с помощью fetch (для этого надо создать стейт с числовым параметром page и добавить его в запрос )
+fetch(url).then(r => r.json()).then(body => {})
 
-    Из реакта нужно использовать useState (для хранения страницы), useEffect
+*2. Вывести данные текущей страницы в таблицу. Структура тегов table>tbody>tr(строка таблицы)>td(ячейка таблицы)
 
-    Например
-    Math.ceil(7.5) === 8`
+*3. Сделать возможность перемещения по страницам с помощью кнопок
+На первую страницу
+На страницу назад
+На страницу вперед
+На последнюю страницу
+
+Для переходово надо менять параметр стейта  page
+
+*4. Кнопки должны иметь аттрибут disabled
+- если это первые две кнопки и страница 0
+- если это последние две кнопки и страница последняя
+
+Для работы вам надо будет использовать математические функции
+- Mathmax - вычислить максимальоне число из двух
+- Mathceil - округление наверх не целого числа
+
+Из реакта нужно использовать useState (для хранения страницы), useEffect
+
+Например
+Mathceil(7.5) === 8`
 
   return (
     <div className="p-2">
-      {text3}
+      <ReactMarkdown source={text3} />
     </div>
   )
 }
