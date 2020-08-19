@@ -22,7 +22,7 @@ import Menu4 from './Microtasks/microtask4/menu4'
 import Menu5 from './Microtasks/microtask5/menu5'
 import Desc5 from './Microtasks/microtask5/desc5'
 import Brewery from './BreweryClassComponents/index'
-import Microtask5 from './Microtasks/microtask5/taskclock'
+import Microtask5 from './Microtasks/microtask5/Timer/timerClock'
 
 // import config from '../../server/config'
 
