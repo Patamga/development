@@ -148,10 +148,10 @@ const config = {
         ]
       },
       {
-        test: /.(png|woff|woff2|eot|ttf|svg)$/,
+        test: /\.woff(2)$/,
         use: [
           {
-            loader: 'url-loader?limit=100000',
+            loader: 'file-loader',
             options: {
               name: '[name].[ext]',
               outputPath: 'fonts/'
