@@ -147,18 +147,19 @@ const config = {
           }
         ]
       },
-      {
-        test: /\.woff(2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      },
+      // {
+      //   test: /\.woff(2)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //         outputPath: 'fonts/'
+      //       }
+      //     }
+      //   ]
+      // },
+      { test: /.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
       {
         test: /\.[ot]tf$/,
         use: [
