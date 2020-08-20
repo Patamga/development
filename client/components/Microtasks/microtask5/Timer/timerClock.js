@@ -7,9 +7,6 @@ const Timer = () => {
   const [enteredMinutes, setEnteredMinutes] = useState()
   const [timerId, setTimerId] = useState()
 
-  const buttonClass = 'button-clock'
-  const classDivStart = 'clockContainer'
-
   const clock = (count) => {
     const minutes = Math.floor(count / 60)
     const seconds = count % 60
@@ -59,11 +56,9 @@ const Timer = () => {
     <div className="microtask-clock ">
       <div className="clock-body ">
         <div
-          className={
-            typeof counter === 'undefined' || counter <= 0
-              ? classDivStart
-              : `${classDivStart} hidden`
-          }
+          className={`clockContainer ${
+            typeof counter === 'undefined' || counter <= 0 ? '' : 'hidden'
+          }`}
         >
           <div className=" flex">
             <div className="w-full flex">
@@ -80,30 +75,28 @@ const Timer = () => {
             </div>
           </div>
           <div className=" h-full flex items-center">
-            <button type="button" className={buttonClass} onClick={() => start()}>
+            <button type="button" className="button-clock" onClick={() => start()}>
               <SvgPlay />
             </button>
           </div>
         </div>
         <div
-          className={
-            typeof counter === 'undefined' || counter <= 0
-              ? `${classDivStart} hidden`
-              : classDivStart
-          }
+          className={`clockContainer ${
+            typeof counter === 'undefined' || counter <= 0 ? 'hidden' : ''
+          }`}
         >
           <div className="clock flex">{clock(counter)}</div>
           <div className=" w-40 flex items-center justify-center p-5">
             <button
               type="button"
-              className={timerId !== 0 ? `${buttonClass} hidden` : buttonClass}
+              className={`button-clock ${timerId !== 0 && 'hidden'}`}
               onClick={() => play()}
             >
               <SvgPlay />
             </button>
             <button
               type="button"
-              className={timerId !== 0 ? buttonClass : `${buttonClass} hidden`}
+              className={`button-clock ${timerId === 0 && 'hidden'}`}
               onClick={() => pause()}
             >
               <SvgPause />
