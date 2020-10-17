@@ -22,6 +22,7 @@ import Menu4 from './Microtasks/microtask4/menu4'
 import Menu5 from './Microtasks/microtask5/menu5'
 import Desc5 from './Microtasks/microtask5/desc5'
 import Brewery from './BreweryClassComponents/index'
+import Calendar from './Calendar'
 import Microtask5 from './Microtasks/microtask5/Timer/timerClock'
 
 // import config from '../../server/config'
@@ -52,6 +53,10 @@ const Dummy = () => {
             <Link className="link" to="/brewery/">
               task
             </Link>
+            <h1>CALENDAR</h1>
+            <Link className="link" to="/calendar/">
+              calendar
+            </Link>
           </div>
         </div>
         <div className=" w-full  h-full bg-gray-300">
@@ -78,6 +83,7 @@ const Dummy = () => {
             <Route exact path="/microtasks/microtask5" component={() => <Microtask5 />} />
             <Route exact path="/microtasks/microtask5/desc5" component={() => <Desc5 />} />
             <Route exact path="/brewery/" component={() => <Brewery />} />
+            <Route exact path="/calendar/" component={() => <Calendar />} />
           </Switch>
         </div>
       </div>
