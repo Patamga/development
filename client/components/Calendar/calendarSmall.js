@@ -9,7 +9,8 @@ const Dummy = () => {
   const date = useSelector((store) => store.cln.date)
   const days = useSelector((store) => store.cln.daysInterval)
   const currentMont = getMonth(date)
-  const currentDay = getDate(new Date())
+  const currentToday = getDate(new Date())
+  const currentTodayMont = getMonth(new Date())
 
   useEffect(() => {
     dispatch(setDaysInterval())
@@ -39,7 +40,7 @@ const Dummy = () => {
                     </div>
                   ) : (
                     <span className="wis">
-                      {currentDay === getDate(it) ? (
+                      {currentToday === getDate(it) && currentTodayMont === getMonth(it) ? (
                         <div className="styleCurrent">{getDate(it)}</div>
                       ) : (
                         <div className="dateStyles">{getDate(it)}</div>

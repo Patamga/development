@@ -33,7 +33,7 @@ const initialState = {
   date: new Date(),
   daysInterval: [],
   rowsWeeks: 4,
-  viewType: 'mont'
+  viewType: 'month'
 }
 export default (state = initialState, action) => {
   switch (action.type) {
