@@ -22,9 +22,9 @@ import Menu4 from './Microtasks/microtask4/menu4'
 import Menu5 from './Microtasks/microtask5/menu5'
 import Desc5 from './Microtasks/microtask5/desc5'
 import Brewery from './BreweryClassComponents/index'
-import Calendar from './Calendar'
+import Calendar from './Calendar/calendarBig'
 import Microtask5 from './Microtasks/microtask5/Timer/timerClock'
-
+import CalendarSmool from './Calendar/calendarSmall'
 // import config from '../../server/config'
 
 const Dummy = () => {
@@ -37,8 +37,35 @@ const Dummy = () => {
         MICROTASKS
       </div>
       <div className="flex flex-col w-full h-full md:flex-row">
-        <div className="flex flex-col w-screen h-auto  bg-white md:h-screen md:w-64 p-5 ">
+        <div className="flex flex-col w-screen h-auto  bg-white md:h-screen p-2 widthLeftBar ">
           <div className="flex flex-col text-sm bz">
+            <div className="flex h-full logo">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="42px"
+                height="42px"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  d="M3,20H45a0,0,0,0,1,0,0V40a4,4,0,0,1-4,4H7a4,4,0,0,1-4-4V20A0,0,0,0,1,3,20Z"
+                  fill="#f0f0f1"
+                />
+                <path d="M41,6H7a4,4,0,0,0-4,4V20H45V10A4,4,0,0,0,41,6Z" fill="#ec5044" />
+                <path d="M14,13a2,2,0,0,1-2-2V3a2,2,0,0,1,4,0v8A2,2,0,0,1,14,13Z" fill="#495660" />
+                <path d="M34,13a2,2,0,0,1-2-2V3a2,2,0,0,1,4,0v8A2,2,0,0,1,34,13Z" fill="#495660" />
+                <path
+                  d="M21.39,38.5A2,2,0,0,1,20,37.9l-5.39-5.53a2,2,0,0,1,2.87-2.79l4,4.12L30.63,25A2,2,0,0,1,33.37,28L22.76,38A2,2,0,0,1,21.39,38.5Z"
+                  fill="#495660"
+                />
+              </svg>
+              <div className="flex pl-8 ">
+                <Link className=" text-blue-600 text-2xl" to="/calendar/">
+                  Calendar
+                </Link>
+              </div>
+            </div>
+
+            <CalendarSmool />
             <h1>MICROTASK 1</h1>
             <TaskMenu params={params} />
             <h1>MICROTASK 2</h1>
@@ -52,10 +79,6 @@ const Dummy = () => {
             <h1>BREWERY - CLASS COMPONENT</h1>
             <Link className="link" to="/brewery/">
               task
-            </Link>
-            <h1>CALENDAR</h1>
-            <Link className="link" to="/calendar/">
-              calendar
             </Link>
           </div>
         </div>

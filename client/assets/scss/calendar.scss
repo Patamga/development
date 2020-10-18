@@ -1,141 +1,188 @@
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif; display: block;
-    margin: 8px;}
-.day {
+// * {box-sizing: border-box;}
+// body {font-family: Verdana, sans-serif; display: block;
+//     margin: 8px;}
 
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  border-left: 1px solid #999;
+// .widthLeftBar {
+//   width: 256px;
+//   max-width: 256px;
+//   min-width: 256px;
+//   margin-right: 3px;
+// }
+// .day {
 
-}
+//   margin: 0;
+//   height: 100%;
+//   width: 100%;
+//   // border-left: 1px solid #999;
 
-.day span {
-  width: 100%;
-  display: flex;
-  margin: 0;
-  display: inline-block;
-  width: calc(100% / 7);
-  font-size: 14px;
-  line-height: 1;
-  text-align: center;
-  text-transform: capitalize;
-  border-right: 1px solid #999;
-  border-bottom: 1px solid #999;
-  box-sizing: border-box;
-  color: #0e3254;
-  cursor: pointer;
-  position: relative;
-  justify-content: center;
-  flex-direction: column;
-}
-.day span span {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  text-align: center;
-  border: none;
-  justify-items: center;
-
-  justify-content: center;
-
-
-  transition: color .15s;
-    will-change: color;
-    z-index: 3;
-}
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    text-transform: capitalize;
-}
-
-.weekdays span {
-    display: inline-block;
-    width: calc(100% / 7);
-    color: #999;
-    text-align: center;
-    font-size: 14px;
-
-
-}
-// @media screen and (max-width:720px) {
-//     .weekdays span, .day span {width: 13.1%;}
 // }
 
-// @media screen and (max-width: 420px) {
-//     .weekdays span, .day span {width: 12.5%;}
-//     .day span .active {padding: 2px;}
+// .day span {
+//   width: 100%;
+//   display: flex;
+//   margin: 0;
+//   display: inline-block;
+//   width: calc(100% / 7);
+
+
+//   text-align: center;
+//   text-transform: capitalize;
+//   // border-right: 1px solid #999;
+//   // border-bottom: 1px solid #999;
+//   // box-sizing: border-box;
+
+
+//   position: relative;
+//   justify-content: center;
+
+// }
+// .day span span {
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   text-align: center;
+//   border: none;
+//   justify-items: center;
+
+//   justify-content: center;
+
+
+//   transition: color .15s;
+//     will-change: color;
+//     z-index: 3;
 // }
 
-// @media screen and (max-width: 290px) {
-//     .weekdays span, .day span {width: 12.2%;}
+// .day span span .dateStyle {
+//   margin-top: 3px;
+//   padding-top: 3px;
+//   height: 30px;
+//   width: 30px;
+//   font-size: 14px;
+//   cursor: pointer;
+// }
+// .day span span .dateStyleCurrent {
+//   margin-top: 3px;
+//   padding-top: 3px;
+//   height: 30px;
+//   width: 30px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   background-color: lightskyblue;
+//   border: #999;
+//   border-radius: 9999px;
+//   color: #fff;
 // }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-.tooltip-bottom {
-    top: 135%;
-}
-.heightstileF {
-  height: calc(100% / 4);
-}
-.heightstileFF {
-  height: calc(100% / 5);
-}
-.heightstileFFF {
-  height: calc(100% / 6);
-}
 
 
-.header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  text-align: center;
-  text-transform: capitalize;
-  color: #333
 
-}
 
+// .weekdays span {
+//     display: inline-block;
+//     width: calc(100% / 7);
+//     color: #999;
+//     text-align: center;
+//     font-size: 14px;
+
+
+// }
+// // @media screen and (max-width:720px) {
+// //     .weekdays span, .day span {width: 13.1%;}
+// // }
+
+// // @media screen and (max-width: 420px) {
+// //     .weekdays span, .day span {width: 12.5%;}
+// //     .day span .active {padding: 2px;}
+// // }
+
+// // @media screen and (max-width: 290px) {
+// //     .weekdays span, .day span {width: 12.2%;}
+// // }
+
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+// }
+
+// .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 120px;
+//     background-color: #555;
+//     color: #fff;
+//     text-align: center;
+//     border-radius: 6px;
+//     padding: 5px 0;
+//     position: absolute;
+//     z-index: 1;
+
+//     left: 50%;
+//     margin-left: -60px;
+//     opacity: 0;
+//     transition: opacity 0.3s;
+// }
+
+// .tooltip .tooltiptext::after {
+
+//     position: absolute;
+//     top: 100%;
+//     left: 50%;
+//     margin-left: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: #555 transparent transparent transparent;
+// }
+
+// .tooltip:hover .tooltiptext {
+//     visibility: visible;
+//     opacity: 1;
+// }
+// .tooltip-bottom {
+//     top: 135%;
+// }
+// .heightstileF {
+//   height: calc(100% / 4);
+// }
+// .heightstileFF {
+//   height: calc(100% / 5);
+// }
+// .heightstileFFF {
+//   height: calc(100% / 6);
+// }
+
+
+// .header {
+//   align-items: center;
+//   display: flex;
+//   justify-content: space-between;
+//   position: relative;
+//   text-align: center;
+//   text-transform: capitalize;
+//   color: #333;
+//   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+
+// }
+// .inWis {
+//   color: #999;
+// }
+
+// .left {
+//   width: 256px;
+//   border-right: 1px solid #333;
+// }
+// .leftHeader {
+//   height: 32px;
+//   font-size: 14px;
+//   font-weight: 400;
+//   color: #3c4043;
+//   display: flex;
+//   align-items: center;
+//   margin-left: 4px;
+//   margin-right: 3px;
+
+// }
+// .leftHeader span{
+//   width: 200px;
+// }
 
 
 

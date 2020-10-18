@@ -1,0 +1,207 @@
+
+.containerCalendar{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-left: 1px;
+  border-style: solid;
+  border-color: #CBD5E0;
+}
+.headerCalendar{
+  padding-left: 8px;
+  display: flex;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #CBD5E0;
+  width: 100%;
+  height: 64px;
+  padding: 8px;
+}
+.styleMontContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+}
+.styleMontContainer > div {
+  padding-top: 4px;
+  display: flex;
+  width: calc(100% / 7);
+  justify-content: center;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: #CBD5E0;
+  font-size: 12px;
+}
+.styleSmallMontContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+}
+.styleSmallMontContainer > div {
+  padding-top: 4px;
+  display: flex;
+  width: calc(100% / 7);
+  justify-content: center;
+  font-size: 10px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 7px 12px 20px 12px;
+    padding: 8px;
+    font-family: 'Google Sans',Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    text-transform: none;
+    opacity: 1;
+    color: #3c4043;
+    background-color: transparent;
+    border: 1px solid #dadce0;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 36px;
+}
+.tooltip:hover {
+  background-color: #E2E8F0;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 110px;
+    background-color: #718096;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 3px 0;
+    position: absolute;
+    z-index: 1;
+
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.tooltip-bottom {
+    top: 110%;
+}
+.heightstileF {
+  height: calc(100% / 4);
+}
+.heightstileFF {
+  height: calc(100% / 5);
+}
+.heightstileFFF {
+  height: calc(100% / 6);
+}
+.arroWButton {
+  margin: 7px 12px 20px 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.arroWButton:hover {
+background-color: #E2E8F0;
+}
+.dateToday {
+  margin: 7px 12px 20px 12px;
+  color: #3c4043;
+  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 28px;
+  white-space: nowrap;
+}
+.weekdays {
+  display: flex;
+  margin: 0;
+  padding: 4px 0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.weekdays span {
+  width: calc(100% / 7);
+  color: #999;
+  text-align: center;
+
+}
+.inWis {
+  color: #999;
+}
+.wis {
+  color: #3c4043;
+}
+.dateStyles {
+  display: flex;
+  padding: 4px;
+  margin: 0px;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  cursor: pointer;
+}
+.dateStyles:hover {
+  margin: 0px;
+  padding: 4px;
+  color: #fff;
+  background-color: gainsboro;
+  border: #999;
+  border-radius: 9999px;
+}
+.styleCurrent {
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+  margin: 0px;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  background-color: #4299E1;
+  color: #fff;
+  border: #4299E1;
+  border-radius: 9999px;
+}
+.leftHeader {
+  height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3c4043;
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+  margin-right: 3px;
+}
+.dateTodaySmall {
+  margin: 7px 12px 20px 12px;
+  color: #3c4043;
+  font-family: 'Google Sans',Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 28px;
+  white-space: nowrap;
+}

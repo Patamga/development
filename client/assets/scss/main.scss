@@ -6,7 +6,7 @@
 @import "./brewery.scss";
 @import "./clock.scss";
 @import "./calendar.scss";
-
+@import "./calendarBig.scss";
 
 
 
@@ -33,6 +33,12 @@ a:hover {
 }
 Link {
   color: #2763bd;
+}
+.widthLeftBar {
+  width: 256px;
+  max-width: 256px;
+  min-width: 256px;
+  margin-right: 3px;
 }
 // .bz {
 //   font-family:  "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
