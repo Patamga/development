@@ -32,7 +32,8 @@ const getRowsWeeks = (startDate, endDate) => differenceInWeeks(endDate, startDat
 const initialState = {
   date: new Date(),
   daysInterval: [],
-  rowsWeeks: 4
+  rowsWeeks: 4,
+  viewType: 'mont'
 }
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -83,5 +84,11 @@ export function addedMonts() {
     const dateCalendar = getState().cln.date
     const mont = getAddMont(dateCalendar)
     dispatch({ type: NEW_DATE, date: mont })
+  }
+}
+export function setTodayDate() {
+  return (dispatch) => {
+    const today = new Date()
+    dispatch({ type: NEW_DATE, date: today })
   }
 }

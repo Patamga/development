@@ -8,11 +8,8 @@ const Dummy = () => {
   const dispatch = useDispatch()
   const date = useSelector((store) => store.cln.date)
   const days = useSelector((store) => store.cln.daysInterval)
-
   const currentMont = getMonth(date)
   const currentDay = getDate(new Date())
-
-  // const today = format(date, 'iii, dd MMM')
 
   useEffect(() => {
     dispatch(setDaysInterval())
