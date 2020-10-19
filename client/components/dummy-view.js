@@ -64,8 +64,11 @@ const Dummy = () => {
                 </Link>
               </div>
             </div>
-
             <CalendarSmool />
+            <h1>CALENDAR</h1>
+            <Link className="link" to="/calendar/">
+              task
+            </Link>
             <h1>MICROTASK 1</h1>
             <TaskMenu params={params} />
             <h1>MICROTASK 2</h1>
