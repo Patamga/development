@@ -25,6 +25,9 @@ import Brewery from './BreweryClassComponents/index'
 import Calendar from './Calendar'
 import Microtask5 from './Microtasks/microtask5/Timer/timerClock'
 import CalendarSmool from './Calendar/calendarSmall'
+// import Google from './Calendar/googleData'
+
+
 // import config from '../../server/config'
 
 const Dummy = () => {
@@ -69,6 +72,12 @@ const Dummy = () => {
             <Link className="link" to="/calendar/">
               task
             </Link>
+
+            {/* <h1>Google</h1>
+            <Link className="link" to="/calendar/google/">
+              task
+            </Link>
+            */}
             <h1>MICROTASK 1</h1>
             <TaskMenu params={params} />
             <h1>MICROTASK 2</h1>
@@ -110,6 +119,8 @@ const Dummy = () => {
             <Route exact path="/microtasks/microtask5/desc5" component={() => <Desc5 />} />
             <Route exact path="/brewery/" component={() => <Brewery />} />
             <Route exact path="/calendar/" component={() => <Calendar />} />
+            {/* <Route exact path="/calendar/google/" component={() => <Google />} />
+            <Route exact path="/calendar/test/" component={() => <Test />} /> */}
           </Switch>
         </div>
       </div>

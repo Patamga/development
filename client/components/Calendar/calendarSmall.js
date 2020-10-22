@@ -8,9 +8,18 @@ const Dummy = () => {
   const dispatch = useDispatch()
   const date = useSelector((store) => store.cln.date)
   const days = useSelector((store) => store.cln.daysInterval)
-  const currentMont = getMonth(date)
-  const currentToday = getDate(new Date())
+  const currentMonth = getMonth(date)
   const currentTodayMont = getMonth(new Date())
+  const today = getDate(new Date())
+  const getClassNameCell = (dateCell) =>
+    currentMonth !== getMonth(dateCell) ? 'cell_inactive' : 'cell'
+  const getClassNameDate = (dateCell) =>
+    today === getDate(dateCell) && currentTodayMont === getMonth(dateCell)
+      ? 'dateStyles today'
+      : 'dateStyles'
+  // const currentMont = getMonth(date)
+  // const currentToday = getDate(new Date())
+
 
   useEffect(() => {
     dispatch(setDaysInterval())
@@ -34,19 +43,11 @@ const Dummy = () => {
             {days.map((it) => {
               return (
                 <div key={lightFormat(it, 'yyyy-MM-dd')}>
-                  {currentMont !== getMonth(it) ? (
-                    <div className="inWis">
-                      <div className="dateStyles">{getDate(it)}</div>
+                  <div className={getClassNameCell(it)}>
+                    <div className={getClassNameDate(it)}>
+                      <span>{getDate(it)}</span>
                     </div>
-                  ) : (
-                    <span className="wis">
-                      {currentToday === getDate(it) && currentTodayMont === getMonth(it) ? (
-                        <div className="styleCurrent">{getDate(it)}</div>
-                      ) : (
-                        <div className="dateStyles">{getDate(it)}</div>
-                      )}
-                    </span>
-                  )}
+                  </div>
                 </div>
               )
             })}

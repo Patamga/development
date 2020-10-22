@@ -25,6 +25,8 @@
     "es6": true
   },
   "globals": {
+    "CALENDAR_ID": true,
+    "GOOGLE_CALENDAR_API_KEY": true,
     "GOOGLE_API_KEY": true,
     "IS_PROD": true,
     "STRIPE_PUBLIC_KEY": true,
