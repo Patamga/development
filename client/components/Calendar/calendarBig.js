@@ -70,7 +70,7 @@ const Dummy = () => {
                       <div key={ev.id}>
                         <Popup
                           trigger={<div role="presentation"><OneEvent ev={ev} /></div>}
-                          position={['top center', 'bottom right', 'bottom left']}
+                          position={['top center', 'bottom center']}
                         >
                           <div><OneEventDascriotion ev={ev} /> </div>
                         </Popup>
