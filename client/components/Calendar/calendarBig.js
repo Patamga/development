@@ -9,23 +9,33 @@ import OneEventDascriotion from './oneEventDescription'
 
 const Dummy = () => {
   const dispatch = useDispatch()
+  const calendarName = useSelector((store) => store.cln.calendarNameList)
+  console.log('calendarName', calendarName)
   const date = useSelector((store) => store.cln.date)
+  console.log('date', date)
   const days = useSelector((store) => store.cln.daysInterval)
+  console.log('days', days)
   const eventsList = useSelector((store) => store.cln.events)
+  console.log('eventsList', eventsList)
   const eventsListDate = useSelector((store) => store.cln.inceventsDate)
+  console.log('eventsListDate', eventsListDate)
   const eventsListDateTime = useSelector((store) => store.cln.inceventsDateTime)
+  console.log('eventsListDateTime', eventsListDateTime)
   const currentMonth = getMonth(date)
+  console.log('currentMonth', currentMonth)
   const today = getDate(new Date())
   const dateDay = true
   const currentTodayMont = getMonth(new Date())
+  console.log('currentTodayMont', currentTodayMont)
   const getClassNameCell = (dateCell) => currentMonth !== getMonth(dateCell) ? 'cell_inactive' : 'cell'
   const getClassNameDate = (dateCell) =>
     today === getDate(dateCell) && currentTodayMont === getMonth(dateCell)
       ? 'dateStyles today'
       : 'dateStyles'
   const getEventCell = (datecell, arr) => {
+
     const dateCell = formatISO(Date.parse(datecell), { representation: 'date' })
-    return arr
+    const result = arr
       .filter((incEvent) => incEvent.date === dateCell)
       .map((incEv) => {
         return eventsList.reduce((acc, rec) => {
@@ -35,6 +45,8 @@ const Dummy = () => {
           return acc
         }, {})
       })
+      console.log('result', result)
+      return result
   }
   useEffect(() => {
     dispatch(getEvents())
@@ -52,28 +64,36 @@ const Dummy = () => {
                 </div>
                 <div className="eventCell">
                   {getEventCell(it, eventsListDate).map((ev) => {
+
                     return (
                       <div key={ev.id} className="eventOne">
                         <Popup
                           trigger={<div role="presentation">{ev.summary}</div>}
-                          position={['top center', 'bottom right', 'bottom left']}
+                          position={['top center', 'bottom center']}
                         >
-                          <div>
-                            <OneEventDascriotion ev={ev} dateDay={dateDay}/>
-                          </div>
+                          <div><OneEventDascriotion ev={ev} dateDay={dateDay} /> </div>
                         </Popup>
                       </div>
                     )
                   })}
                   {getEventCell(it, eventsListDateTime).map((ev) => {
+
                     return (
-                      <div key={ev.id}>
-                        <Popup
-                          trigger={<div role="presentation"><OneEvent ev={ev} /></div>}
-                          position={['top center', 'bottom center']}
-                        >
-                          <div><OneEventDascriotion ev={ev} /> </div>
-                        </Popup>
+                      <div key={`${ev.id}${ev.summary}`}>
+                        {typeof ev.start.dateTime !== 'undefined' && (
+                          <Popup
+                            trigger={
+                              <div role="presentation">
+                                <OneEvent ev={ev} />
+                              </div>
+                            }
+                            position={['top center', 'bottom center']}
+                          >
+                            <div>
+                              <OneEventDascriotion ev={ev} />{' '}
+                            </div>
+                          </Popup>
+                        )}
                       </div>
                     )
                   })}

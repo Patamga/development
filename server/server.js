@@ -78,16 +78,21 @@ server.get('/api/v1/breweries/locations/:id', (req, res) => {
 // Brewery component end
 // Calendar start
 
-const CALENDAR_ID = config.calendarId
+// const CALENDAR_ID = config.calendarId
 const GOOGLE_CALENDAR_API_KEY = config.googleCalendarApiKey
 const START_DATE = '2020-06-01T00:00:00Z'
 const END_DATE = '2021-12-31T00:00:00Z'
 
-const googleCalendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?singleEvents=true&timeMin=${START_DATE}&timeMax=${END_DATE}&key=${GOOGLE_CALENDAR_API_KEY}`
+const googleCalendarUrl = (calendarId) =>
+  `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?singleEvents=true&timeMin=${START_DATE}&timeMax=${END_DATE}&key=${GOOGLE_CALENDAR_API_KEY}`
 
-server.get('/api/v1/google/calendar_events', (req, res) => {
+server.get('/api/v1/google/calendar_events/:calendarId', async (req, res) => {
   console.log('API called')
-  axios(googleCalendarUrl).then(({ data }) => {
+  const id = req.params.calendarId
+  console.log('id', id)
+  // const id = calendarId
+  await axios(googleCalendarUrl(id)).then(({ data }) => {
+    console.log('-----------',data)
     return res.json(data)
   })
 })
