@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { updateListCalendars } from '../../redux/reducers/cln'
+import { addCalendar } from '../../redux/reducers/cln'
 
 
 const Dummy = () => {
@@ -27,12 +27,12 @@ const Dummy = () => {
         <button
           className=" w-2 text-3xl text-gray-600 mx-3"
           type="button"
-          onClick={() => dispatch(updateListCalendars(calendarId))}
+          onClick={() => dispatch(addCalendar(calendarId))}
         >
           +
         </button>
       </div>
-      <span>the calendar must be public</span>
+      <span className="text-red-400 text-xs">the calendar must be public</span>
     </div>
   )
 }

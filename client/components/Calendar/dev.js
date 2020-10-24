@@ -6,7 +6,7 @@ const Dummy = () => {
   // описание переменных в ответе
   // const w = 'https://developers.google.com/calendar/v3/reference/events'
   // AMA calendar = https://calendar.google.com/calendar/u/0/embed?src=amaverify@gmail.com
-  // amaverify@gmail.com 
+  // amaverify@gmail.com
   const y = [
   {
     kind: 'calendar#event',
@@ -400,3 +400,31 @@ console.log("_________",p)
 Dummy.propTypes = {}
 
 export default React.memo(Dummy)
+// const init = () => {
+//   return {}
+// }
+// const init = () => {
+//   return {
+//     date: new Date(),
+//     daysInterval: [],
+//     viewType: 'month',
+//     events: [],
+//     inceventsDate: [],
+//     inceventsDateTime: [],
+//     nameCaledars: ['IAmA Schedule'],
+//     idCalendars: ['amaverify@gmail.com'],
+//     calendarNameList: [],
+
+//     calendars: [
+//       {
+//         name: 'IAmA Schedule',
+//         id: 'amaverify@gmail.com',
+//         active: true,
+//         events: [],
+//         inceventsDate: [],
+//         inceventsDateTime: []
+//       }
+//     ]
+//   }
+// }
+// const initialState = init()

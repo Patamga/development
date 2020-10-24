@@ -1,61 +1,80 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Popup from 'reactjs-popup';
-import { lightFormat, getDate, getMonth, formatISO } from 'date-fns'
-import { getEvents } from '../../redux/reducers/cln'
-import OneEvent from './oneEventButton'
+import { lightFormat, getDate, getMonth } from 'date-fns'
+import { addCalendar } from '../../redux/reducers/cln'
+// import OneEvent from './oneEventButton'
 import OneEventDascriotion from './oneEventDescription'
 
 
 const Dummy = () => {
   const dispatch = useDispatch()
-  const calendarName = useSelector((store) => store.cln.calendarNameList)
-  console.log('calendarName', calendarName)
-  const date = useSelector((store) => store.cln.date)
-  console.log('date', date)
-  const days = useSelector((store) => store.cln.daysInterval)
-  console.log('days', days)
-  const eventsList = useSelector((store) => store.cln.events)
-  console.log('eventsList', eventsList)
-  const eventsListDate = useSelector((store) => store.cln.inceventsDate)
-  console.log('eventsListDate', eventsListDate)
-  const eventsListDateTime = useSelector((store) => store.cln.inceventsDateTime)
-  console.log('eventsListDateTime', eventsListDateTime)
-  const currentMonth = getMonth(date)
-  console.log('currentMonth', currentMonth)
+  const startTestData = 'amaverify@gmail.com'
   const today = getDate(new Date())
+  const date = useSelector((store) => store.cln.date)
   const dateDay = true
   const currentTodayMont = getMonth(new Date())
-  console.log('currentTodayMont', currentTodayMont)
-  const getClassNameCell = (dateCell) => currentMonth !== getMonth(dateCell) ? 'cell_inactive' : 'cell'
+  const currentMonth = getMonth(date)
+  const getClassNameCell = (dateCell) =>
+    currentMonth !== getMonth(dateCell) ? 'cell_inactive' : 'cell'
   const getClassNameDate = (dateCell) =>
     today === getDate(dateCell) && currentTodayMont === getMonth(dateCell)
       ? 'dateStyles today'
       : 'dateStyles'
-  const getEventCell = (datecell, arr) => {
+  const days = useSelector((store) => store.cln.daysInterval)
+  const calendars = useSelector((store) => store.cln.calendars)
+  console.log('calendars', calendars)
 
-    const dateCell = formatISO(Date.parse(datecell), { representation: 'date' })
-    const result = arr
-      .filter((incEvent) => incEvent.date === dateCell)
-      .map((incEv) => {
-        return eventsList.reduce((acc, rec) => {
-          if (rec.id === incEv.id) {
-            return rec
-          }
-          return acc
-        }, {})
-      })
-      console.log('result', result)
-      return result
+  const getDayEvents = (day, calenDars) => {
+    const formatDate = (d) => lightFormat(Date.parse(d), 'yyyy-MM-dd')
+    if (!calenDars) return []
+    return calenDars.reduce((dayEvents, calendar) => {
+      if (!calendar.items) {
+        return dayEvents
+      }
+      const calEventsForDay = calendar.items.reduce((acc, event) => {
+        if ((typeof event.start.date !== 'undefined' &&
+              formatDate(event.start.date) === formatDate(day)) ||
+            (typeof event.start.dateTime !== 'undefined' &&
+              formatDate(event.start.dateTime) === formatDate(day))) {
+          return [...acc, event]
+        }
+        return acc
+      }, [])
+      return [...dayEvents, ...calEventsForDay]
+    }, [])
   }
+
+
+  // const getEventCell = (datecell, events) => {
+
+  //   const dateCell = formatISO(Date.parse(datecell), { representation: 'date' })
+  //   const result = events
+  //     .filter((incEvent) => incEvent.date === dateCell)
+  //     .map((incEv) => {
+  //       return eventsList.reduce((acc, rec) => {
+  //         if (rec.id === incEv.id) {
+  //           return rec
+  //         }
+  //         return acc
+  //       }, {})
+  //     })
+
+  //     return result
+  // }
+
+
+
   useEffect(() => {
-    dispatch(getEvents())
+    dispatch(addCalendar(startTestData))
   }, [])
 
   return (
     <div className="flex h-full w-full">
       <div className="styleMontContainer">
+
         {days.map((it) => {
+
           return (
             <div key={lightFormat(it, 'yyyy-MM-ddh')}>
               <div className={getClassNameCell(it)}>
@@ -63,21 +82,21 @@ const Dummy = () => {
                   <span>{getDate(it)}</span>
                 </div>
                 <div className="eventCell">
-                  {getEventCell(it, eventsListDate).map((ev) => {
-
+                  {getDayEvents(it, calendars).map((ev) => {
                     return (
                       <div key={ev.id} className="eventOne">
                         <Popup
                           trigger={<div role="presentation">{ev.summary}</div>}
                           position={['top center', 'bottom center']}
                         >
-                          <div><OneEventDascriotion ev={ev} dateDay={dateDay} /> </div>
+                          <div>
+                            <OneEventDascriotion ev={ev} dateDay={dateDay} />{' '}
+                          </div>
                         </Popup>
                       </div>
                     )
                   })}
-                  {getEventCell(it, eventsListDateTime).map((ev) => {
-
+                  {/* {getEventCell(it, eventsListDateTime).map((ev) => {
                     return (
                       <div key={`${ev.id}${ev.summary}`}>
                         {typeof ev.start.dateTime !== 'undefined' && (
@@ -96,7 +115,7 @@ const Dummy = () => {
                         )}
                       </div>
                     )
-                  })}
+                  })} */}
                 </div>
               </div>
             </div>

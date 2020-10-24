@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { lightFormat, getDate, getMonth } from 'date-fns'
 import { setDaysInterval } from '../../redux/reducers/cln'
 import HeaderLeft from './headerLeft'
-import AddCalendar from './inputNewCalendar'
+
 import CalendarList from './calendarList'
 
 const Dummy = () => {
@@ -57,9 +57,7 @@ const Dummy = () => {
         </div>
       </div>
       <CalendarList />
-      <div>
-        <AddCalendar />
-      </div>
+
     </div>
   )
 }

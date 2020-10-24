@@ -1,16 +1,40 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import AddCalendar from './inputNewCalendar'
 
 const Dummy = () => {
-  const listNames = useSelector((store) => store.cln.nameCaledars)
+  const listNames = useSelector((store) => store.cln.calendars)
   console.log('calendarList', listNames)
 
+  const onChange = (e) => {
+    console.log('checkbox', e.target.checked)
+    if (e.target.checked) {
+      // const newValue = e.target.value
+      // setCalendarId(newValue)
+      // value = false
+    }
+  }
+
   return (
-    <div>
-      {typeof listNames !== 'undefined' &&
-        listNames.map((calendar) => {
-          return <li key={calendar}>{calendar}</li>
+    <div className="listCalendars">
+      <fieldset>
+        <legend className="dateTodaySmall px-2"> Calendars </legend>
+
+        {listNames.map((calendar) => {
+
+          return (
+
+            <label key={calendar.summary} htmlFor={calendar.summary} id={calendar.summary}>
+              {calendar.summary}
+              { typeof calendar.summary !=='undefined'  &&
+              <input type="checkbox" checked onChange={onChange} className=" mx-5" />
+              }
+
+            </label>
+          )
         })}
+        <AddCalendar />
+      </fieldset>
     </div>
   )
 }
