@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import { lightFormat, getDate, getMonth } from 'date-fns'
 import { setDaysInterval } from '../../redux/reducers/cln'
 import HeaderLeft from './headerLeft'
 
 import CalendarList from './calendarList'
 
+
 const Dummy = () => {
   const dispatch = useDispatch()
+  const location = useLocation()
+  
   const date = useSelector((store) => store.cln.date)
   const days = useSelector((store) => store.cln.daysInterval)
   const currentMonth = getMonth(date)
@@ -56,8 +60,9 @@ const Dummy = () => {
           </div>
         </div>
       </div>
+      {location.pathname === '/calendar/' &&
       <CalendarList />
-
+      }
     </div>
   )
 }

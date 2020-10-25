@@ -25,15 +25,10 @@ import Brewery from './BreweryClassComponents/index'
 import Calendar from './Calendar'
 import Microtask5 from './Microtasks/microtask5/Timer/timerClock'
 import CalendarSmool from './Calendar/calendarSmall'
-// import Google from './Calendar/googleData'
-
-
-// import config from '../../server/config'
 
 const Dummy = () => {
   const params = useParams()
-  // const apiKey = config.apiKeyGoogle
-  // console.log('keys', apiKey)
+
   return (
     <div className="w-full h-full flex flex-col bg-gray-100">
       <div className="flex items-center justify-center h-12 w-full bg-teal-700 text-white font-thin   ">
@@ -72,12 +67,6 @@ const Dummy = () => {
             <Link className="link" to="/calendar/">
               task
             </Link>
-
-            {/* <h1>Google</h1>
-            <Link className="link" to="/calendar/google/">
-              task
-            </Link>
-            */}
             <h1>MICROTASK 1</h1>
             <TaskMenu params={params} />
             <h1>MICROTASK 2</h1>

@@ -66,4 +66,8 @@ dist
 */.DS_Store
 yarn-error.log
 *.csv
+
+
 test.js
+dev.js
+googleData copy.js

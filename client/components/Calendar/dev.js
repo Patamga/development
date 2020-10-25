@@ -428,3 +428,19 @@ export default React.memo(Dummy)
 //   }
 // }
 // const initialState = init()
+  // const getEventCell = (datecell, events) => {
+
+  //   const dateCell = formatISO(Date.parse(datecell), { representation: 'date' })
+  //   const result = events
+  //     .filter((incEvent) => incEvent.date === dateCell)
+  //     .map((incEv) => {
+  //       return eventsList.reduce((acc, rec) => {
+  //         if (rec.id === incEv.id) {
+  //           return rec
+  //         }
+  //         return acc
+  //       }, {})
+  //     })
+
+  //     return result
+  // }
