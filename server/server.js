@@ -87,14 +87,15 @@ const googleCalendarUrl = (calendarId) =>
   `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?singleEvents=true&timeMin=${START_DATE}&timeMax=${END_DATE}&key=${GOOGLE_CALENDAR_API_KEY}`
 
 server.get('/api/v1/google/calendar_events/:calendarId', async (req, res) => {
-  console.log('API called')
   const id = req.params.calendarId
-  console.log('id', id)
-  // const id = calendarId
-  await axios(googleCalendarUrl(id)).then(({ data }) => {
-    console.log('-----------',data)
-    return res.json(data)
+  await axios(googleCalendarUrl(id))
+  .then(({ data }) => {
+    res.json(data)
   })
+  .catch(() => {
+    res.status(500)
+  })
+  res.end()
 })
 
 // Calendar end

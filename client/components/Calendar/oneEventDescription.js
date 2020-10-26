@@ -3,9 +3,12 @@ import { lightFormat, format } from 'date-fns'
 
 const Dummy = (props) => {
   const eventCopyUrl = (url) => url.match(/[^=]+$/)[0]
-  const parceDate = props.dateDay
-    ? Date.parse(props.ev.start.date)
-    : Date.parse(props.ev.start.dateTime)
+  let parceDate
+  if (props.ev.start.date) {
+    parceDate = Date.parse(props.ev.start.date)
+  } else if (props.ev.start.dateTime) {
+    parceDate = Date.parse(props.ev.start.dateTime)
+  }
   const urlCopyGoogle = `https://calendar.google.com/calendar/u/0/r/eventedit/copy/${eventCopyUrl(props.ev.htmlLink)}`
   const startDate = `${format(parceDate,'EEEEEE, do LLLL,')} ${lightFormat(parceDate, 'HH:mm')} - ${lightFormat(parceDate, 'HH:mm')}`
   return (

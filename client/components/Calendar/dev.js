@@ -444,3 +444,52 @@ export default React.memo(Dummy)
 
   //     return result
   // }
+  // case ADD_EVENT_ALL_DAY: {
+    //   // 1. Найти нужный календарь
+    //   // 2. взять данны из action
+    //   // 3. Сформировать новый массив календарей
+    //   const calendars = state.calendars
+    //   /// Doing something
+    //   return {
+    //     ...state,
+    //     calendars: [...calendars]
+    //   }
+    // }
+        // case 'LIST_CALENDAR_IDS': {
+    //   const result = [...state.idCalendars, action.idCalendars]
+    //   return {
+    //     ...state,
+    //     idCalendars: result
+    //   }
+    // }
+    // case 'ADD_CALENDARS_LIST_NAME':
+    //   return {
+    //     ...state,
+    //     state,
+    //     calendarNameList: action.calendarNameList
+    //   }
+
+    // export function addCalendar(id) {
+//   return (dispatch, getState) => {
+//     const calendarIds = getState().cln.calendarIds
+//     if (!calendarIds.includes(id)) {
+//       return fetch(`/api/v1/google/calendar_events/${id}`)
+//         .then((res) => res.json())
+//         .then((data) => {
+//           dispatch({ type: ADD_CALENDAR, id, calendar: data })
+//           dispatch({ })
+//         })
+//     }
+//   }
+// }
+     {
+       /* <iframe
+          title="1222"
+          src="https://calendar.google.com/calendar/embed?src=q7gba3q71v66v7mhkbd12rgp2c%40group.calendar.google.com&ctz=Europe%2FKiev"
+
+          width="800"
+          height="600"
+
+          scrolling="no"
+        > </iframe> */
+     }

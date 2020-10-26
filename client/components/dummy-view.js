@@ -108,8 +108,6 @@ const Dummy = () => {
             <Route exact path="/microtasks/microtask5/desc5" component={() => <Desc5 />} />
             <Route exact path="/brewery/" component={() => <Brewery />} />
             <Route exact path="/calendar/" component={() => <Calendar />} />
-            {/* <Route exact path="/calendar/google/" component={() => <Google />} />
-            <Route exact path="/calendar/test/" component={() => <Test />} /> */}
           </Switch>
         </div>
       </div>
