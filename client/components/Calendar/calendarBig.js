@@ -88,7 +88,12 @@ const Dummy = () => {
                                 <OneEventDay ev={ev} />
                               </div>
                             }
-                            position={['top center', 'bottom center']}
+                            position={[
+                              'top center',
+                              'bottom center',
+                              'top center',
+                              'bottom center'
+                            ]}
                           >
                             <div>
                               <OneEventDascriotion ev={ev} />
@@ -102,7 +107,12 @@ const Dummy = () => {
                                 <OneEvent ev={ev} />
                               </div>
                             }
-                            position={['top center', 'bottom center']}
+                            position={[
+                              'top center',
+                              'bottom center',
+                              'top center',
+                              'bottom center'
+                            ]}
                           >
                             <div>
                               <OneEventDascriotion ev={ev} />{' '}
